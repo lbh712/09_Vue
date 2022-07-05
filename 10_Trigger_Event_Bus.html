@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <child-component></child-component>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+
+        let evenBus = new Vue();
+
+        Vue.component('child-component', {
+            template: "<div>하위 컴포넌트 영역<button v-on:click='showLog'>show</button></div>",
+            methods: {
+                showLog: function () {
+                    eventBus.$emit('triggerEventBus', 100);
+                }
+            }
+        })
+
+        let app = new Vue({
+            el: '#app',
+            created: function () {
+                eventBun.$on('triggerEventBus', function (value) {
+                    alert(value);
+                })
+            }
+        });
+    </script>
+</body>
+
+</html>
