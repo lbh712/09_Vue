@@ -8,8 +8,11 @@
 </head>
 
 <body>
-
     <div id="app">
+        <p>
+            <router-link to="/">[Go to]</router-link>
+            <router-link to="/login">[Go to "/login"]</router-link>
+        </p>
         <router-view name="header"></router-view>
         <router-view></router-view>
         <router-view name="footer"></router-view>
@@ -22,6 +25,10 @@
         let Header = { template: '<div>This is Header</div>' }
         let Footer = { template: '<div>This is Footer</div>' }
 
+        let LoginBody = { template: '<div>This is LoginBody</div>' }
+        let LoginHeader = { template: '<div>This is LoginHeader</div>' }
+        let LoginFooter = { template: '<div>This is LoginFooter</div>' }
+
         let router = new VueRouter({
             routes: [
                 {
@@ -30,6 +37,14 @@
                         default: Body,
                         header: Header,
                         footer: Footer,
+                    }
+                },
+                {
+                    path: '/login',
+                    components: {
+                        default: LoginBody,
+                        header: LoginHeader,
+                        footer: LoginFooter,
                     }
                 }
             ]

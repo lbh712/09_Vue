@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <a href="https://devmg.tistory.com/115" target="_blank">부연설명</a>
+
+    <script>
+        let server_obj = '{"이름" : "김자바", "직업" : "개발자", "나이": "20"}';
+        let parse = JSON.parse(server_obj);
+
+        console.log(parse);
+        
+        console.log(parse.이름);
+        console.log(parse.직업);
+        console.log(parse.나이);
+
+        let stringify = JSON.stringify(parse);
+        console.log(stringify);
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <button v-on:click="fetchData">프레임워크 목록 가져오기</button>
+        
+        <br>
+        <a  href="https://joshua1988.github.io/vue-camp/vue/axios.html" target="_blank">Vue Axios Guide</a>
+        <a  href="https://cchoimin.tistory.com/entry/Vuejs-Vue-Http-%ED%86%B5%EC%8B%A0-%EC%97%91%EC%8B%9C%EC%98%A4%EC%8A%A4axios%EB%9E%80" target="_blank">Vue Axios Guide</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script>
+        new Vue({
+            el: '#app',
+            methods: {
+                fetchData: function () {
+                    axios.get('https://raw.githubusercontent.com/joshua1988/doit-vuejs/master/data/demo.json')
+                    .then(function(response){
+                        console.log(response)
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
